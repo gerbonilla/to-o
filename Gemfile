@@ -17,6 +17,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
+gem 'conversation_forms'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
