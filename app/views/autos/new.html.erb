@@ -1,0 +1,79 @@
+<script type="text/javascript" src="https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js" crossorigin></script>
+
+<div class="form-main-wrapper">
+  <div cf-context class="form-content-wrapper cf-context">
+    <br>
+    <br>
+    <br>
+    <br>
+    <form cf-form id="cf-form" method="post" action="https://api.formbucket.com/f/buk_YR7xGobkQQBP0bmXAWXtxn1B">
+
+      <!-- firstName -->
+      <fieldset>
+        <label for="firstName">Cuál es tu primer nombre?</label>
+        <input required cf-questions="Para darte las mejores cuotas, necesito saber más sobre ti 😊&& Cual es tu primer nombre?" type="text" class="form-control" name="firstName" id="firstName">
+      </fieldset>
+      <!-- lastName -->
+      <fieldset>
+        <label for="lastName">Apellido</label>
+        <input required cf-questions="Mucho gusto, {previous-answer}! Cuál es tu apellido?" type="text" class="form-control" name="lastName" id="lastName">
+      </fieldset>
+      <!-- email -->
+      <fieldset>
+        <label for="email">email</label>
+        <input required pattern=".+\@.+\..+" cf-error="Por favor escribe un e-mail válido" cf-questions="Muy bien, ahora escribe to e-mail:" type="email" class="form-control" name="email" id="email">
+      </fieldset>
+      <!-- autoBrand -->
+      <fieldset>
+        <label for="autoBrand">Que marca es tu vehículo??</label>
+        <select cf-questions="Gracias! Ahora dinos un poco de tu vehículo. Escoge una marca:" name="autoBrand" id="autoBrand" class="form-control">
+          <option></option>
+          <option>Audi</option>
+          <option>BMW</option>
+          <option>Ford</option>
+          <option>Honda</option>
+          <option>Hyundai</option>
+          <option>Kia</option>
+          <option>Mazda</option>
+          <option>Mercedes</option>
+          <option>Mitsubishi</option>
+          <option>Nissan</option>
+          <option>Toyota</option>
+          <option>Volkswagen</option>
+        </select>
+      </fieldset>
+      <!-- autoModel -->
+      <fieldset>
+        <label for="autoModel">Modelo</label>
+        <input required cf-questions="Que modelo de {previous-answer} es tu vehículo?" type="text" class="form-control" name="autoModel" id="autoModel">
+      </fieldset>
+      <!-- autoFeatures -->
+      <fieldset cf-questions="Tu vehiculo es:">
+        <label for="blindado">Blindado</label>
+        <input  required type="checkbox" name="blindado" id="blindado" value="Blindado">
+        <label for="blindado">Nuevo</label>
+        <input  required type="checkbox" name="nuevo" id="nuevo" value="Nuevo">
+      </fieldset>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+
+
+  <div class="form-info-wrapper">
+  </div>
+</div>
+
+
+
+<!--  Falta incluir:
+
+      ownerType***
+      autoFeatures - array
+      autoCity
+      ownerDUI
+      ownerDOB
+      ownerNIT
+      ownerGender
+      ownerOccupation
+      ownerPhone -->

@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130073636) do
+ActiveRecord::Schema.define(version: 20171203123346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "autos", force: :cascade do |t|
+    t.string "firstName"
+    t.string "lastName"
+    t.string "email"
+    t.string "ownerType"
+    t.string "autoBrand"
+    t.string "autoModel"
+    t.string "autoFeatures", default: [], array: true
+    t.string "autoCity"
+    t.string "ownerDUI"
+    t.string "ownerDOB"
+    t.string "ownerNIT"
+    t.string "ownerGender"
+    t.string "ownerOccupation"
+    t.string "ownerPhone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
