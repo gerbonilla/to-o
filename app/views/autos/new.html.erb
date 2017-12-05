@@ -2,7 +2,9 @@
 
 <div class="form-main-wrapper">
   <div cf-context class="form-content-wrapper cf-context">
-    <form cf-form id="cf-form" method="post" action="https://api.formbucket.com/f/buk_YR7xGobkQQBP0bmXAWXtxn1B">
+    <form cf-form id="cf-form" method="post" action="/autos">
+
+    <%= simple_form_for @auto, html: {"cf-form": true, id: "cf-form"} do %>
 
       <!-- firstName -->
       <fieldset>
@@ -44,15 +46,29 @@
         <input required cf-questions="Que modelo de {previous-answer} es tu vehículo?" type="text" class="form-control" name="autoModel" id="autoModel">
       </fieldset>
       <!-- autoFeatures -->
-      <fieldset cf-questions="Tu vehiculo es:">
-        <label for="blindado">Blindado</label>
-        <input  required type="checkbox" name="blindado" id="blindado" value="Blindado">
+<!--       <fieldset cf-questions="Tu vehiculo es:">
         <label for="blindado">Nuevo</label>
         <input  required type="checkbox" name="nuevo" id="nuevo" value="Nuevo">
+      </fieldset> -->
+      <!-- ownerDUI -->
+      <fieldset>
+        <label for="ownerDUI">ownerDUI</label>
+        <input required cf-questions="{firstName}, cual es tu número de DUI?" type="text" class="form-control" name="ownerDUI" id="ownerDUI">
+      </fieldset>
+      <!-- ownerDOB -->
+      <fieldset>
+        <label for="ownerDOB">ownerDOB</label>
+        <input required cf-questions="Cual es tu fecha de nacimiento?" type="text" class="form-control" name="ownerDOB" id="ownerDOB">
+      </fieldset>
+      <!-- ownerPhone -->
+      <fieldset>
+        <label for="ownerPhone">ownerPhone</label>
+        <input required cf-questions="Última pregunta!&&Cual es tu número de telefono?" type="text" class="form-control" name="ownerPhone" id="ownerPhone">
       </fieldset>
 
       <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+    <% end %>
+    <!-- </form> -->
   </div>
 
 
@@ -64,13 +80,10 @@
 
 
 <!--  Falta incluir:
-
+      autoFeatures***
       ownerType***
-      autoFeatures - array
-      autoCity
-      ownerDUI
-      ownerDOB
-      ownerNIT
-      ownerGender
-      ownerOccupation
+      autoCity***
+      ownerNIT***
+      ownerGender***
+      ownerOccupation***
       ownerPhone -->
