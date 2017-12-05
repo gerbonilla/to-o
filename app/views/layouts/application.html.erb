@@ -7,6 +7,9 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <% if content_for?(:head_zoom) %>
+      <%= yield(:head_zoom) %>
+    <% end %>
   </head>
   <body>
     <%= render 'shared/navbar' %>
