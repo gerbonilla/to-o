@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-company">
+    <% photos = ["allianz.png", "axa.png", "assa.png"] %>
+    <%= image_tag(photos.sample); %>
+  </div>
+  <div class="card-info">
+    <div class="card-description">
+      <p><span class="contract-money">Hasta $<%= rand(40...70) * 10 %>,000</span> en daños a terceros</p>
+      <p><span class="contract-money">$<%= rand(20...50) * 10 %></span> deducible pérdida parcial</p>
+      <p><span class="contract-money"><%= rand(8...18) %>% del valor asegurado</span> deducible pérdida total</p>
+    </div>
+    <div class="card-cost">
+      <p class="contract-money">$<%= rand(70...90) * 10 %></p>
+      <p>Costo Anual</p>
+    </div>
+  </div>
+</div>

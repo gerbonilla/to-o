@@ -11,8 +11,9 @@ class AutosController < ApplicationController
 
   def create
     @auto = Auto.new(auto_params)
+    @auto.autoFeatures << params[:autoFeatures] unless params[:autoFeatures].blank?
     if @auto.save!
-      redirect_to root_path
+      redirect_to auto_contracts_path(@auto)
     else
       render :new
     end
@@ -21,14 +22,13 @@ class AutosController < ApplicationController
   private
 
   def auto_params
-    params.require(:auto).permit(:firstName,
-                                 :lastName,
-                                 :email,
-                                 :autoBrand,
-                                 :autoModel,
-                                 :ownerDUI,
-                                 :ownerDOB,
-                                 :ownerPhone)
+    params.permit(:firstName,
+                   :lastName,
+                   :email,
+                   :autoBrand,
+                   :autoModel,
+                   :autoFeatures
+                   )
   end
 
 end

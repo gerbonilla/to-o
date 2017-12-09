@@ -1,0 +1,44 @@
+.cards-header {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  h2 {
+    padding-top: 100px;
+    color: $brand-color;
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  margin: 15px auto;
+  padding: 10px 10px;
+  background-color: white;
+  box-shadow: 0 0 50px #e7e7e7;
+  color: $black;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info {
+  width: 100%;
+  display: flex;
+  p {
+    margin: 0;
+  }
+}
+
+.card-company {
+  img {
+    height: 30px;
+  }
+}
+
+.card-description {
+  flex: 1 0 auto;
+}
+
+.contract-money {
+  font-weight: bold;
+  color: $green;
+}
