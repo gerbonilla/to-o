@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'pages#home'
+
+  get '/about' => 'pages#about', as: 'about'
+
   resources :autos, only: [:show, :new, :create] do
     resources :contracts, only: [:index, :show]
   end
