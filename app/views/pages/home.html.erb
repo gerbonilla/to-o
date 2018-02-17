@@ -1,33 +1,27 @@
-<div class="homepage-wrapper">
-  <div class="homepage-text">
-    <h1>Compara y escoge seguros en minutos!</h1>
-    <h3>Don Toño, nuestro experto, te ayudará en el proceso</h3>
+<div class="homepage-wrapper background-brand-color">
+  <div class="homepage-content">
+    <h1>Escoge seguros en minutos</h1>
+    <h4>Don Toño, nuestro experto, te ayudará en el proceso</h4>
+    <br><br>
+
+    <!-- Button for car insurance -->
+    <%= link_to new_auto_path, class: "waves-effect btn-large btn-brand-secondary" do %>
+      <div class="icon-btn-wrapper">
+        <i class="large material-icons two-rem-icon">directions_car</i>
+        <span>&nbsp&nbspSeguro de auto&nbsp&nbsp&nbsp&nbsp</span>
+      </div>
+    <% end %>
+    <br><br>
+    <!-- Button for Home insurance -->
+    <%= link_to "#", class: "waves-effect btn-large btn-brand-secondary" do %>
+      <div class="icon-btn-wrapper">
+        <i class="large material-icons two-rem-icon">home</i>
+        <span>&nbsp&nbspSeguro de hogar</span>
+      </div>
+    <% end %>
+    <br>
+    <br>
+    <br>
   </div>
-  <div class="homepage-button">
-    <select class="form-control homepage-dropdown">
-      <option>Que tipo de seguro buscas?</option>
-      <option>Seguro de Auto</option>
-    </select>
-    <%= link_to "COMENZAR", new_auto_path, class: "btn-brand-white"  %>
-  </div>
-    <%= image_tag("tonohomepage.png", height: '200'); %>
-</div>
-<div class="homepage-wrapper bg-color-white">
-  <div class="how-it-works">
-    <div class="step">
-      <h3>1- Cotiza</h3>
-      <%= image_tag("icon-lock.png", height: '50') %>
-      <p>Contesta unas cuantas preguntas para aprender más sobre ti y tu auto</p>
-    </div>
-    <div class="step">
-      <h3>2- Compara</h3>
-      <%= image_tag("icon-tools.png", height: '50') %>
-      <p>Busca y compara los mejores seguros adaptados para tí</p>
-    </div>
-      <div class="step">
-      <h3>3- Selecciona</h3>
-      <%= image_tag("icon-phone.png", height: '50') %>
-      <p>Selecciona el producto que te parezca mejor a traves de nuestr página!</p>
-    </div>
-  </div>
+  <%= image_tag("tonohomepage.png", height: '200', id: "tono-banner"); %>
 </div>

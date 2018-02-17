@@ -1,17 +1,11 @@
-.btn-brand-white {
-  background-color: white;
-  color: $brand-color;
-  width: 100%;
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 2px;
+.btn-brand-primary {
+  background-color: $brand-color;
+  color: $secondary-color;
+  vertical-align: middle;
 }
 
-.btn-brand-red {
-  background-color: $red;
-  color: $white;
-  width: 100%;
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 2px;
+.btn-brand-secondary {
+  background-color: $secondary-color;
+  color: #616465 !important;
+  vertical-align: middle;
 }

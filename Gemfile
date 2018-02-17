@@ -17,6 +17,10 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
+# material design
+gem 'materialize-sass'
+gem 'materialize-form'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

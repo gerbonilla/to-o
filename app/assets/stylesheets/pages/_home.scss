@@ -1,65 +1,24 @@
-.homepage-wrapper {
-  background-color: $brand-primary;
-  width: 100%;
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: $light-gray;
-}
+// .homepage-wrapper {
+//   background-color: $brand-primary;
+//   width: 100%;
+//   height: 95vh;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   align-items: center;
+//   color: $light-gray;
+// }
 
 
-.homepage-button {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+// .homepage-button {
+//   width: 200px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+// }
 
-.homepage-dropdown {
-  margin-bottom: 10px;
-  background-color: rgba(0,0,0,0);
-  color: white;
-  border: none;
-  border-radius: 0px !important;
-  border-bottom: 1px solid white;
-  box-shadow: none;
-  -webkit-border-radius: 0;
-  &:hover, &:focus {
-    box-shadow: none;
-    border: none;
-    border-bottom: 1px solid white;
-  }
-}
-
-.homepage-text {
-  text-align: center;
-  margin-top: 70px;
-  h3 {
-    font-weight: lighter;
-  }
-}
-
-.how-it-works {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  text-align: center;
-}
-
-.bg-color-white {
-  background-color: white;
-}
-
-.homepage-content-wrapper {
-  background-color: $light-gray;
-  width: 100%;
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: $light-gray;
+#tono-banner {
+  position: fixed;
+  bottom: 0;
 }
