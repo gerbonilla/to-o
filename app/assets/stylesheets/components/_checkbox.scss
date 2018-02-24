@@ -1,0 +1,4 @@
+.checkbox-primary[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid $primary-color;
+     background-color: $primary-color;
+}

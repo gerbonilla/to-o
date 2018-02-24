@@ -2,48 +2,50 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  h3 {
+  h2 {
     padding-top: 100px;
-    color: $black;
+    padding-bottom: 50px;
+    color: $secondary-color;
+    text-align: center;
   }
 }
 
-.card {
-  width: 100%;
-  max-width: 600px;
-  margin: 25px auto;
-  padding: 10px 10px;
-  background-color: white;
-  border: 1px solid $gray;
-  color: $black;
-  display: flex;
-  flex-direction: column;
-  border-radius: 2px;
-  &:hover {
-    box-shadow: 0px 8px 15px 2px #1c1c1c38;
-    transition: box-shadow .2s;
-  }
-}
+// .card {
+//   width: 100%;
+//   max-width: 600px;
+//   margin: 25px auto;
+//   padding: 10px 10px;
+//   background-color: white;
+//   border: 1px solid $gray;
+//   color: $black;
+//   display: flex;
+//   flex-direction: column;
+//   border-radius: 2px;
+//   &:hover {
+//     box-shadow: 0px 8px 15px 2px #1c1c1c38;
+//     transition: box-shadow .2s;
+//   }
+// }
 
-.card-info {
-  width: 100%;
-  display: flex;
-  p {
-    margin: 0;
-  }
-}
+// .card-info {
+//   width: 100%;
+//   display: flex;
+//   p {
+//     margin: 0;
+//   }
+// }
 
-.card-company {
-  img {
-    height: 30px;
-  }
-}
+// .card-company {
+//   img {
+//     height: 30px;
+//   }
+// }
 
-.card-description {
-  flex: 1 0 auto;
-}
+// .card-description {
+//   flex: 1 0 auto;
+// }
 
-.contract-money {
-  font-weight: bold;
-  color: $green;
-}
+// .contract-money {
+//   font-weight: bold;
+//   color: $green;
+// }

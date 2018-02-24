@@ -6,8 +6,13 @@ $blue: #469AE0;
 $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
-$gray: #969696;
+$gray: #616465;
 $black: #1C1C1C;
 $white: #F6F6F6;
 $light-gray: #F4F4F4;
 $brand-color: $primary-color;
+
+
+.font-primary-color {
+  color: $primary-color;
+}

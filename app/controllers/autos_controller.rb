@@ -10,8 +10,9 @@ class AutosController < ApplicationController
   end
 
   def create
-    @auto = Auto.new(auto_params)
-    @auto.autoFeatures << params[:autoFeatures] unless params[:autoFeatures].blank?
+    @auto = Auto.new(firstName: "NA", lastName: "NA", email:"na@na.com", autoBrand: "NA", autoModel:"NA", autoFeatures: "NA")
+    # @auto = Auto.new(auto_params)
+    # @auto.autoFeatures << params[:autoFeatures] unless params[:autoFeatures].blank?
     if @auto.save!
       redirect_to auto_contracts_path(@auto)
     else

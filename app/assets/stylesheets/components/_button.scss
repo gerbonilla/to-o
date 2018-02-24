@@ -6,6 +6,10 @@
 
 .btn-brand-secondary {
   background-color: $secondary-color;
-  color: #616465 !important;
+  color: $gray !important;
   vertical-align: middle;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
 }
