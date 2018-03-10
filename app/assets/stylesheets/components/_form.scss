@@ -1,8 +1,18 @@
 /* label color */
 .input-field label {
-  color: $brand-primary;
+  color: $brand-primary !important;
   font-size: 1.8rem;
   margin-bottom: 2px;
+
+}
+
+.input-field input[type=text] {
+  font-size: 1.7rem;
+  margin: 5px 0 25px 0;
+  padding-bottom: 10px;;
+  &:active, &:focus {
+    border-bottom: 1px solid $brand-primary !important;
+  }
 }
 .caret {
   border-color: transparent !important;
@@ -16,3 +26,4 @@
   font-size: 1.4rem;
   margin: 15px 0 20px 0;
 }
+

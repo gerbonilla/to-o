@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206074823) do
+ActiveRecord::Schema.define(version: 20180305210549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accident_contracts", force: :cascade do |t|
+    t.bigint "accident_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "contract_type"
+    t.string "age"
+    t.string "gender"
+    t.string "email"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accident_id"], name: "index_accident_contracts_on_accident_id"
+  end
+
+  create_table "accidents", force: :cascade do |t|
+    t.integer "min_age"
+    t.integer "max_age"
+    t.string "family"
+    t.string "contract_type"
+    t.string "company"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "autos", force: :cascade do |t|
     t.string "firstName"
@@ -46,6 +70,28 @@ ActiveRecord::Schema.define(version: 20171206074823) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "coverages", force: :cascade do |t|
+    t.string "coverage_type"
+    t.integer "amount"
+    t.integer "deductible"
+    t.boolean "important"
+    t.bigint "accident_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accident_id"], name: "index_coverages_on_accident_id"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string "plan_type"
+    t.integer "annual_installments"
+    t.integer "amount_cents"
+    t.integer "annual_amount_cents"
+    t.bigint "accident_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["accident_id"], name: "index_plans_on_accident_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -63,4 +109,7 @@ ActiveRecord::Schema.define(version: 20171206074823) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "accident_contracts", "accidents"
+  add_foreign_key "coverages", "accidents"
+  add_foreign_key "plans", "accidents"
 end

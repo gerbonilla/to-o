@@ -1,0 +1,4 @@
+$('.form-wrapper').empty();
+formWrapper = document.querySelector('.form-wrapper');
+formWrapper.className += " margin-top-20-vh";
+formWrapper.insertAdjacentHTML('afterbegin', '<%= j render "userinfo", accidentContract: @accidentContract, selectedPlan: @selectedPlan %>');

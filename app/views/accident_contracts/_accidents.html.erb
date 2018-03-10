@@ -1,0 +1,44 @@
+
+<h3>Resultados</h3>
+
+<% accidents.each do |accident| %>
+<div class="row">
+  <div class="col s12 m12">
+    <%= form_with(model: @accidentContract) do |f| %>
+    <%= f.hidden_field :contract_type, value: accidentContract.contract_type %>
+    <%= f.hidden_field :age, value: accidentContract.age %>
+    <%= hidden_field_tag 'accident_id', accident.id %>
+    <div class="card">
+      <div class="card-image">
+        <!-- TODO logic for coverage classification -->
+        <%= image_tag("green.png") %>
+        <div class="card-title card-title-accident">
+          <!-- TODO logic for coverage classification -->
+          <p><strong>Máxima Cobertura</strong></p>
+          <div class="card-accident-header">
+            <!-- TODO sort for lowes annual cost -->
+            <p class="card-price"><%= number_to_currency(accident.plans[0].annual_amount_cents / 100, precision: 0) %></p>
+            <p>Prima Anual</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <p>Coberturas:</p>
+        <% accident.coverages.where(important: true). each do |coverage| %>
+        <!-- Muerte Accidental y desmembramiento -->
+        <p><%= number_to_currency(coverage.amount, precision: 0) %> - <%= coverage.coverage_type %></p>
+        <div class="progress">
+          <!-- TODO determine percentage -->
+          <div class="determinate" style="width: <%= rand(40..80) %>%"></div>
+        </div>
+        <% end %>
+      </div>
+      <div class="card-action">
+        <button class="btn waves-light btn-brand-primary" type="submit" name="action">Aplicar</button>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#">Detalles</a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<% end %>

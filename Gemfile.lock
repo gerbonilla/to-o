@@ -90,6 +90,12 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    money (6.10.1)
+      i18n (>= 0.6.4, < 1.0)
+    money-rails (0.0.1)
+      activesupport (>= 3.0)
+      money (>= 4.0.2)
+      railties (>= 3.0)
     multi_json (1.12.2)
     nio4r (2.1.0)
     nokogiri (1.8.1)
@@ -197,6 +203,8 @@ DEPENDENCIES
   listen (~> 3.0.5)
   materialize-form
   materialize-sass
+  money
+  money-rails (~> 0.0.1)
   pg
   pry-byebug
   pry-rails

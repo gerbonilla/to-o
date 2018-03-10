@@ -1,0 +1,12 @@
+.progress {
+  height: 10px;
+  margin-bottom: 10px;
+  .determinate {
+    background-color: $primary-color;
+  }
+}
+
+.collection .collection-item.avatar {
+  min-height: 60px;
+
+}
