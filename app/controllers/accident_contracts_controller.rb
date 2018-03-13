@@ -12,7 +12,22 @@ class AccidentContractsController < ApplicationController
 
     if @accidentContract && @accidentContract.accident.nil?
       contract_type = @accidentContract.contract_type
-      @accidents = Accident.where(contract_type: contract_type)
+      @accidents = Accident.where("contract_type = ? AND min_age <= ? AND max_age >= ? ", contract_type, @accidentContract.age, @accidentContract.age)
+      @min_coverage = {}
+      @max_coverage = {}
+      @accidents = @accidents.sort { |a,b| b.plans[0].annual_amount_cents <=> a.plans[0].annual_amount_cents }
+
+      @accidents.each do |a|
+        a.coverages.each do |c|
+          # max
+          if @max_coverage[c.coverage_type].nil?
+            @max_coverage[c.coverage_type] = c.amount
+          elsif c.amount > @max_coverage[c.coverage_type]
+            @max_coverage[c.coverage_type] = c.amount
+          end
+        end
+      end
+
       respond_to do |format|
         format.js {render "create"}
       end

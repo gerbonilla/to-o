@@ -9,7 +9,7 @@
     </div>
 
     <div class="input-field col s12">
-      <%= select(:accident_contract, :contract_type, [['Para mi', "Individual"], ['Para mi y mi familia', "Familiar"]], include_blank: "Escoge una opción") %>
+      <%= select(:accident_contract, :contract_type, [['Para mi', "Titular"], ['Para mi y mi familia', "Familiar"]], include_blank: "Escoge una opción") %>
       <%= f.label :contract_type, "Para quien es el seguro?" %>
     </div>
 
