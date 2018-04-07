@@ -1,17 +1,18 @@
-<div class="homepage-wrapper background-brand-color">
+<div class="homepage-wrapper background-brand-color" style="background-image: url('<%= image_url('bg.jpg') %>'); background-position: center;">
+
   <div class="homepage-content">
     <h1>Escoge seguros en minutos</h1>
     <h4>Don Toño, nuestro experto, te ayudará en el proceso</h4>
     <br><br>
 
-    <!-- Button for car insurance -->
+ <!--     Button for car insurance
     <%= link_to new_auto_path, class: "waves-effect btn-large btn-brand-secondary" do %>
       <div class="icon-btn-wrapper">
         <i class="large material-icons two-rem-icon">directions_car</i>
         <span>&nbsp&nbspSeguro de automovil&nbsp&nbsp</span>
       </div>
     <% end %>
-    <br><br>
+    <br><br> -->
     <!-- Button for Home insurance -->
     <%= link_to new_accident_contract_path, class: "waves-effect btn-large btn-brand-secondary" do %>
       <div class="icon-btn-wrapper">
@@ -23,5 +24,5 @@
     <br>
     <br>
   </div>
-  <%= image_tag("tonohomepage.png", height: '200', id: "tono-banner"); %>
+
 </div>

@@ -1,0 +1,14 @@
+<div id="accidentmodal<%= accident.id %>" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h3><%= classification %> Cobertura</h3>
+    <br>
+    <p>La cobertura de este seguro es la siguiente:</p>
+    <% family = eval(accident.family) %>
+    <p><%= family[:principal] %> de cobertura para ti</p>
+    <p><%= family[:spouse] %> de cobertura para tu cónyuge</p>
+    <p><%= family[:children] %> de cobertura para tus hijos</p>
+  </div>
+  <div class="modal-footer">
+    <button class="modal-action modal-close btn waves-light btn-brand-primary" type="submit" name="action">Aplicar</button>
+  </div>
+</div>

@@ -1,12 +1,19 @@
 .progress {
-  height: 10px;
-  margin-bottom: 10px;
+  height: 40px;
+  margin-bottom: 5px;
   .determinate {
-    background-color: $primary-color;
+    background-color: #dedede;
   }
+  color: $gray;
 }
 
 .collection .collection-item.avatar {
   min-height: 60px;
+}
 
+.progress-text {
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    // bottom: 0;
 }

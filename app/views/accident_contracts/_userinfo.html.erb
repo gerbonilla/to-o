@@ -5,10 +5,10 @@
 <br>
 
 <div class="row">
-<%= form_for accidentContract do |f| %>
-    <%= f.hidden_field :contract_type, value: accidentContract.contract_type %>
-    <%= f.hidden_field :age, value: accidentContract.age %>
-    <%= hidden_field_tag 'accident_id', selectedPlan %>
+  <%= form_for accidentContract do |f| %>
+  <%= f.hidden_field :contract_type, value: accidentContract.contract_type %>
+  <%= f.hidden_field :age, value: accidentContract.age %>
+  <%= hidden_field_tag 'accident_id', selectedPlan %>
   <div class="row">
     <div class="input-field col offset-m2 m8 s12">
       <%= f.text_field :first_name, wrapper_html: { class: 'offset-m2 m8 s12' } %>
@@ -23,6 +23,11 @@
     <div class="input-field col offset-m2 m8 s12">
       <%= f.text_field :email, wrapper_html: { class: 'offset-m2 m8 s12' } %>
       <%= f.label :email, "Cual es tu correo electronico?" %>
+    </div>
+
+    <div class="input-field col offset-m2 m8 s12">
+      <%= f.text_field :phone_number, wrapper_html: { class: 'offset-m2 m8 s12' } %>
+      <%= f.label :phone_number, "Cual es tu numero de teléfono?" %>
     </div>
 
     <div class="col s12 center-align">
