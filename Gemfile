@@ -21,6 +21,10 @@ gem 'uglifier'
 gem 'materialize-sass'
 gem 'materialize-form'
 
+# admin
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
