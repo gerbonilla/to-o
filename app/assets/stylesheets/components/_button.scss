@@ -2,12 +2,20 @@
   background-color: $brand-color;
   color: $secondary-color;
   vertical-align: middle;
+  &:hover {
+    background-color: $brand-color;
+    color: $secondary-color;
+  }
 }
 
 .btn-brand-secondary {
   background-color: $secondary-color;
   color: $gray !important;
   vertical-align: middle;
+    &:hover {
+    background-color: $brand-color;
+    color: $secondary-color;
+  }
 }
 
 .margin-top-50 {

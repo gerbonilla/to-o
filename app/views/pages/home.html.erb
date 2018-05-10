@@ -1,8 +1,9 @@
-<div class="homepage-wrapper background-brand-color" style="background-image: url('<%= image_url('bg-zegurito.jpg') %>'); background-position: center;">
+<div class="homepage-wrapper" style="background-image: url('<%= image_url('bg-zegurito.jpg') %>'); background-position: center;">
 
   <div class="homepage-content">
-    <h1 class="primary-color-text">Escoge seguros en minutos</h1>
-    <h4 class="primary-color-text">Don Toño, nuestro experto, te ayudará en el proceso</h4>
+    <a class="avatar-150" id="menu"><%= image_tag('Loguito-Zegurito.png') %></a>
+    <h1>Escoge seguros en minutos</h1>
+    <h4>Zegurito, nuestro experto, te ayudará en el proceso</h4>
     <br><br>
 
  <!--     Button for car insurance
@@ -14,7 +15,7 @@
     <% end %>
     <br><br> -->
     <!-- Button for Home insurance -->
-    <%= link_to new_accident_contract_path, class: "waves-effect btn-large btn-brand-secondary" do %>
+    <%= link_to new_health_request_path, class: "waves-effect btn-large btn-brand-primary" do %>
       <div class="icon-btn-wrapper">
         <i class="large material-icons two-rem-icon">local_hospital</i>
         <span>&nbsp&nbspSeguro de salud&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>
@@ -22,7 +23,7 @@
     <% end %>
     <br>
     <br>
-    <%= link_to new_accident_contract_path, class: "waves-effect btn-large btn-brand-secondary" do %>
+    <%= link_to new_accident_contract_path, class: "waves-effect btn-large btn-brand-primary" do %>
       <div class="icon-btn-wrapper">
         <i class="large material-icons two-rem-icon">report</i>
         <span>&nbsp&nbspSeguro de accidentes</span>

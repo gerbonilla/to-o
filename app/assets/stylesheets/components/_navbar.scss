@@ -34,7 +34,7 @@
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
-  color: $gray;
+  color: $gray !important;
   padding: 0 20px;
 }
 
