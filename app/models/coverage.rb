@@ -1,3 +1,4 @@
 class Coverage < ApplicationRecord
-  belongs_to :accident
+  belongs_to :accident, optional: true
+  belongs_to :health_contract, optional: true
 end

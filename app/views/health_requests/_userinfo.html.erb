@@ -1,0 +1,49 @@
+
+<h3 class="text-center">Último Paso!</h3>
+<p class="text-center">Al llenar el formulario, uno de nuestros compañeros de Diamante Asesores se pondrá en contacto contigo para finalizar la subscripción</p>
+
+<br>
+
+<div class="row">
+  <%= form_for health_request do |f| %>
+  <%= f.hidden_field :gender, value: health_request.gender %>
+  <%= f.hidden_field :age, value: health_request.age %>
+  <%= hidden_field_tag 'health_contract_id', selectedPlan %>
+  <div class="row">
+    <div class="input-field col offset-m2 m8 s12">
+      <%= f.text_field :first_name, wrapper_html: { class: 'offset-m2 m8 s12' } %>
+      <%= f.label :first_name, "Cual es tu primer nombre?" %>
+    </div>
+
+    <div class="input-field col offset-m2 m8 s12">
+      <%= f.text_field :last_name, wrapper_html: { class: 'offset-m2 m8 s12' } %>
+      <%= f.label :last_name, "Cual es tu apellido?" %>
+    </div>
+
+    <div class="input-field col offset-m2 m8 s12">
+      <%= f.text_field :email, wrapper_html: { class: 'offset-m2 m8 s12' } %>
+      <%= f.label :email, "Cual es tu correo electronico?" %>
+    </div>
+
+    <div class="input-field col offset-m2 m8 s12">
+      <%= f.text_field :phone_number, wrapper_html: { class: 'offset-m2 m8 s12' } %>
+      <%= f.label :phone_number, "Cual es tu numero de teléfono?" %>
+    </div>
+
+    <div class="col s12 center-align">
+      <button class="btn waves-light btn-brand-primary margin-top-50" type="submit" name="action">Finalizar
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<%= content_for :after_js do %>
+<script>
+  $(document).ready(function() {
+    Materialize.updateTextFields();
+  });
+</script>
+<% end %>

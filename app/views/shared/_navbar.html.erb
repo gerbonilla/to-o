@@ -1,16 +1,19 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag("tono-logo-white.png"); %>
+  <%= image_tag("tono-logo-white.png"); %>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-      <!-- Links when logged in -->
-      <!-- <%= link_to "SEGUROS", new_auto_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
-      <%= link_to "QUIENES SOMOS", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "CONTÁCTANOS", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <!-- Links when logged in -->
+    <!-- <%= link_to "SEGUROS", new_auto_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
+    <%= link_to "QUIENES SOMOS", about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "CONTÁCTANOS", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <% if user_signed_in? %>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
 
   </div>
 

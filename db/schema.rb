@@ -76,9 +76,33 @@ ActiveRecord::Schema.define(version: 20180424210019) do
     t.integer "deductible"
     t.boolean "important"
     t.bigint "accident_id"
+    t.bigint "health_contract_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["accident_id"], name: "index_coverages_on_accident_id"
+    t.index ["health_contract_id"], name: "index_coverages_on_health_contract_id"
+  end
+
+  create_table "health_contracts", force: :cascade do |t|
+    t.integer "min_age"
+    t.integer "max_age"
+    t.string "company"
+    t.string "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "health_requests", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "gender"
+    t.string "email"
+    t.string "phone_number"
+    t.bigint "health_contract_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["health_contract_id"], name: "index_health_requests_on_health_contract_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -87,9 +111,11 @@ ActiveRecord::Schema.define(version: 20180424210019) do
     t.integer "amount_cents"
     t.integer "annual_amount_cents"
     t.bigint "accident_id"
+    t.bigint "health_contract_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["accident_id"], name: "index_plans_on_accident_id"
+    t.index ["health_contract_id"], name: "index_plans_on_health_contract_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -112,5 +138,8 @@ ActiveRecord::Schema.define(version: 20180424210019) do
 
   add_foreign_key "accident_contracts", "accidents"
   add_foreign_key "coverages", "accidents"
+  add_foreign_key "coverages", "health_contracts"
+  add_foreign_key "health_requests", "health_contracts"
   add_foreign_key "plans", "accidents"
+  add_foreign_key "plans", "health_contracts"
 end

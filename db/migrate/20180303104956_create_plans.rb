@@ -6,6 +6,7 @@ class CreatePlans < ActiveRecord::Migration[5.1]
       t.integer :amount_cents
       t.integer :annual_amount_cents
       t.references :accident, foreign_key: true
+      t.references :health_contract, foreign_key: true
 
       t.timestamps
     end

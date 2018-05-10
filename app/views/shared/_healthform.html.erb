@@ -1,0 +1,23 @@
+
+<div class="row">
+  <%= form_with(model: @health_request) do |f| %>
+  <div class="row">
+
+    <div class="input-field col s12">
+    <%= select(:health_request, :age, (18..80), include_blank: "Edad", required: true) %>
+      <%= f.label :age, "Cuantos años tienes?" %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= select(:health_request, :gender, ['Hombre', 'Mujer'], include_blank: "Escoge una opción") %>
+      <%= f.label :contract_type, "Cual es tu género?" %>
+    </div>
+
+    <div class="col s12 center-align">
+      <button class="btn waves-light btn-brand-primary margin-top-50" type="submit" name="action">Cotizar
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+  <% end %>
+</div>

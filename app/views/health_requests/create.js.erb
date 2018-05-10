@@ -1,0 +1,7 @@
+$('.form-wrapper').empty();
+formWrapper = document.querySelector('.form-wrapper');
+formWrapper.className += " margin-top-20-vh";
+formWrapper.insertAdjacentHTML('afterbegin', '<%= j render "healthcontracts", health_request: @health_request, health_contracts: @health_contracts, max_coverage: @max_coverage, highest_coverage: 0 %>');
+// $('.tap-target').tapTarget();
+$('.modal').modal();
+// $('.tap-target').tapTarget('open');
