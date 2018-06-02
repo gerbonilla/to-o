@@ -27,3 +27,11 @@
   margin: 15px 0 20px 0;
 }
 
+.input-field label {
+pointer-events: auto;
+}
+
+.checkbox-brand-color[type="checkbox"].filled-in:checked + label:after {
+     border: 2px solid $primary-color;
+     background-color: $primary-color;
+}

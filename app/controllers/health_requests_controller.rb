@@ -7,10 +7,12 @@ class HealthRequestsController < ApplicationController
 
   def create
     @selectedPlan = params[:health_contract_id]
+    puts params
     @health_request = HealthRequest.new(health_request_params)
     @health_request.health_contract = HealthContract.find(@selectedPlan) unless @selectedPlan.blank?
 
     if @health_request && @health_request.health_contract.nil?
+      puts "*******Contract Screen********"
       gender = @health_request.gender
       @health_contracts = HealthContract.where("gender = ? AND min_age <= ? AND max_age >= ? ", gender, @health_request.age, @health_request.age)
       @min_coverage = {}
@@ -33,6 +35,7 @@ class HealthRequestsController < ApplicationController
       end
 
     elsif @health_request.health_contract && @health_request.email.nil?
+      puts "*******User Screen********"
       respond_to do |format|
         format.js {render "userinfo.js.erb"}
       end
@@ -46,6 +49,6 @@ class HealthRequestsController < ApplicationController
   private
 
   def health_request_params
-    params.require(:health_request).permit(:health_contract, :first_name, :last_name, :age, :gender, :email, :phone_number)
+    params.require(:health_request).permit(:health_contract, :first_name, :last_name, :age, :gender, :email, :phone_number, :dental, :life, :global)
   end
 end

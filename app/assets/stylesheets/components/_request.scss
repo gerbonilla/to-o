@@ -1,0 +1,113 @@
+.price {
+  background-color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 50%;
+  height: 185px;
+  width: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.request-wrapper {
+  width: 100vw;
+  padding: 50px;
+  [type="checkbox"] + label {
+    height: 50px;
+    padding-left: 50px;
+    font-size: 2rem;
+  }
+  [type="checkbox"].filled-in:checked + label:before {
+    top: 5px;
+    left: 6px;
+  }
+  [type="checkbox"].filled-in:not(:checked) + label:after {
+    height: 30px;
+    width: 30px;
+  }
+  [type="checkbox"].filled-in:checked + label:after {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.request-wrapper.basic {
+  background-color: $primary-color;
+  width: 100vw;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.basic-coverages {
+  color: white;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  p {
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.request-wrapper.dental {
+  background-color: white;
+  width: 100vw;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dental-coverages {
+  color: $primary-color;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  p {
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+
+.request-wrapper.life {
+  background-color: white;
+  width: 100vw;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.life-coverages {
+  color: $primary-color;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  p {
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.coverage-white-box {
+  border: 1px solid white;
+  padding: 8px 0px;
+  margin: 5px 0px;
+  border-radius: 4px;
+}
+
+.coverage-primary-box {
+  border: 1px solid $primary-color;
+  padding: 8px 0px;
+  margin: 5px 0px;
+  border-radius: 4px;
+}

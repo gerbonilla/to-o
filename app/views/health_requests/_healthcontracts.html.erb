@@ -1,81 +1,115 @@
+<%= form_with(model: @health_request) do |f| %>
+<%= f.hidden_field :gender, value: health_request.gender %>
+<%= f.hidden_field :age, value: health_request.age %>
+<%= f.hidden_field :global, value: true %>
+<%= hidden_field_tag 'health_contract_id', health_contracts[0].id %>
 
-<h3>Tus Resultados:</h3>
-<div class="fixed-action-btn direction-top active" style="bottom: 45px; right: 24px;">
+<!-- Header with price -->
+
+<div class="request-wrapper basic">
+  <div class="price">
+    <h3>$24/mes</h3>
+    <p class="text-center">Seguro de salud</p>
+  </div>
+  <div class="basic-coverages">
+    <h4>Coberturas en Centro America:</h4>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$80 en Reembolsos</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$100 en Deducibles</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$1,500 en Ambulancia Terrestre</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$10,000 en Ambulancia Aérea</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$75 de Cuarto y Alimentación</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$1,500 en Repatriación</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$200,000 de Maximo Vitalicio</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$3,000 en Maternidad</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="coverage-white-box">
+          <p>$100 en Pediatría</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- <div class="request-wrapper global">
+  <%= f.check_box :global, {class: "filled-in checkbox-brand-color", id: "global"}, "1", "0"%>
+  <%= label_tag(:global, "Incluir cobertura global ($12/mes)") %>
+</div> -->
+
+<div class="request-wrapper dental">
+  <div class="dental-coverages">
+    <%= f.check_box :dental, {class: "filled-in checkbox-brand-color", id: "dental"}, "1", "0"%>
+    <%= label_tag(:dental, "Plan dental ($6/mes)") %>
+    <br>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="coverage-primary-box">
+          <p>$80 en cobertura dental</p>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="coverage-primary-box">
+          <p>$100 en cobertura de ortodoncia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="request-wrapper life">
+  <div class="life-coverages">
+    <%= f.check_box :life, {class: "filled-in checkbox-brand-color", id: "life"}, "1", "0"%>
+    <%= label_tag(:life, "Seguro de vida ($4/mes)") %>
+    <br>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="coverage-primary-box">
+          <p>$200,000 en coberturas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="request-wrapper life">
+  <button class="btn waves-light btn-brand-primary" type="submit" name="action">Aplicar</button>
+</div>
+
+<% end %>
+
+<!-- <div class="fixed-action-btn direction-top active" style="bottom: 45px; right: 24px;">
   <a class="avatar-75" id="menu"><%= image_tag('Loguito-Zegurito.png') %></a>
-</div>
-  <div class="tap-target grey lighten-5" data-activates="menu">
-    <div class="tap-target-content">
-      <h4>Muerte Accidental y Desmembramiento</h4>
-      <p>Esta cobertura lo protege contra dificultades financieras debidas a un accidente que causa la muerte, desmembramiento, parálisis, o pérdida de la vista, del habla o de audición.</p>
-      <p>Necesitas mas Ayuda?</p>
-    </div>
-  </div>
-
-<!-- logic for classyfying contracts -->
-<% max_coverage.each {|k,v| highest_coverage += v} %>
-<% health_contracts.each do |health_contract| %>
-<% total_coverage = 0 %>
-<% health_contract.coverages.each {|z| total_coverage += z.amount} %>
-<% if ((total_coverage.to_f / highest_coverage.to_f) > 0.9)  %>
-<% image_color = "green" %>
-<% classification = "Máxima" %>
-<% elsif ((total_coverage.to_f / highest_coverage.to_f) > 0.3) %>
-<% image_color = "yellow" %>
-<% classification = "Mediana" %>
-<% else %>
-<% image_color = "orange" %>
-<% classification = "Baja" %>
-<% end %>
-
-<!-- cards -->
-<div class="row">
-  <!-- card -->
-  <div class="col s12 m12">
-    <%= form_with(model: @health_request) do |f| %>
-    <%= f.hidden_field :gender, value: health_request.gender %>
-    <%= f.hidden_field :age, value: health_request.age %>
-    <%= hidden_field_tag 'health_contract_id', health_contract.id %>
-    <div class="card">
-      <!-- card header -->
-      <div class="card-image">
-        <%= image_tag("#{image_color}.png") %>
-        <div class="card-title card-title-accident">
-          <!-- Tipo de Cobertura Header -->
-          <div>
-            <p><strong><%= classification %></strong></p>
-            <p><strong>Cobertura</strong></p>
-          </div>
-          <!-- Prima Mensula Header -->
-          <div class="card-accident-header">
-            <p class="card-price"><%= number_to_currency(health_contract.plans[0].amount_cents / 100, precision: 0) %></p>
-            <p>Prima Mensual</p>
-          </div>
-        </div>
-      </div>
-      <!-- card content -->
-      <div class="card-content">
-        <p>Coberturas:</p>
-        <% health_contract.coverages.where(important: true). each do |coverage| %>
-        <!-- Element Showed -->
-        <div class="progress" onclick="$('.tap-target').tapTarget('open')">
-          <% coverage_percentage = (coverage.amount.to_f / max_coverage[coverage.coverage_type].to_f) * 100 %>
-          <div class="determinate" style="width: <%= coverage_percentage %>%"></div>
-          <p class="progress-text"><%= number_to_currency(coverage.amount, precision: 0) %> - <%= coverage.coverage_type %></p>
-        </div>
-        <% end %>
-      </div>
-      <div class="card-action">
-        <button class="btn waves-light btn-brand-primary" type="submit" name="action">Aplicar</button>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a class="modal-trigger" href="#health-contract-modal<%= health_contract.id %>">Detalles</a>
-      </div>
-      <%= render 'shared/health-contract-modal', health_contract: health_contract, classification: classification %>
-    </div>
-    <% end %>
-  </div>
-</div>
-<% end %>
-
-
-
-
-
+</div> -->
