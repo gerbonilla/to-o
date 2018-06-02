@@ -1,6 +1,7 @@
 Coverage.destroy_all
 Plan.destroy_all
 Accident.destroy_all
+HealthRequest.destroy_all
 HealthContract.destroy_all
 
 # TODO Revisar bien los deducibles

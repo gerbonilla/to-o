@@ -17,7 +17,7 @@ class HealthRequestsController < ApplicationController
       @health_contracts = HealthContract.where("gender = ? AND min_age <= ? AND max_age >= ? ", gender, @health_request.age, @health_request.age)
       @min_coverage = {}
       @max_coverage = {}
-      @health_contracts = @health_contracts.sort { |a,b| b.plans[0].annual_amount_cents <=> a.plans[0].annual_amount_cents }
+      # @health_contracts = @health_contracts.sort { |a,b| b.plans[0].annual_amount_cents <=> a.plans[0].annual_amount_cents }
 
       @health_contracts.each do |a|
         a.coverages.each do |c|
