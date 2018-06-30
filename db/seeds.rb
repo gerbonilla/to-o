@@ -226,47 +226,34 @@ Plan.create(plan_type: "anual", amount_cents: 87400, annual_installments: 1, ann
 puts "Created #{paligAccidentes16}"
 
 
+
+
+
 #Seguro de Salud: 18-19 Hombre con dental
 paligSalud1 = HealthContract.create(min_age: 18, max_age: 19, company: "PALIG", gender: "Hombre")
-Coverage.create(coverage_type: "Reembolso en Centro America", amount: 80, deductible: 100, important: true, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Deducible en Centro America", amount: 100, deductible: 100, important: true, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Cobertura Dental anual", amount: 1500, deductible: 100, important: true, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Ambulancia Terrestre", amount: 1500, deductible: 100, important: true, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Cobertura de Ortodoncia anual", amount: 1500, deductible: 100, important: false, health_contract: paligSalud1)
-# Coverage.create(coverage_type: "Reembolso global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
-# Coverage.create(coverage_type: "Deducible global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
-# Coverage.create(coverage_type: "Ambulancia Terrestre global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Ambulancia Aérea", amount: 10000, deductible: 100, important: false, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Maximo Vitalicio", amount: 200000, deductible: 100, important: false, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Cuarto y Alimentación en Centro America", amount: 75, deductible: 100, important: false, health_contract: paligSalud1)
-# Coverage.create(coverage_type: "Cuarto y Alimentación global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
+Coverage.create(coverage_type: "en reembolsos", amount: 80, deductible: 100, important: true, health_contract: paligSalud1)
+Coverage.create(coverage_type: "deducible", amount: 100, deductible: 100, important: true, health_contract: paligSalud1)
+Coverage.create(coverage_type: "en ambulancia terrestre", amount: 1500, deductible: 100, important: true, health_contract: paligSalud1)
+Coverage.create(coverage_type: "en ambulancia aérea", amount: 10000, deductible: 100, important: true, health_contract: paligSalud1)
+Coverage.create(coverage_type: "de cuarto y alimentación", amount: 75, deductible: 100, important: true, health_contract: paligSalud1)
+Coverage.create(coverage_type: "en gastos de repatriación", amount: 1500, deductible: 100, important: true, health_contract: paligSalud1)
+Coverage.create(coverage_type: "de maximo vitalicio", amount: 200000, deductible: 100, important: true, health_contract: paligSalud1)
+Coverage.create(coverage_type: "en pediatría al recien nacido", amount: 100, deductible: 100, important: true, health_contract: paligSalud1)
+# Coverage.create(coverage_type: "en gastos de maternidad", amount: 3000, deductible: 100, important: true, health_contract: paligSalud1)
+
+Coverage.create(coverage_type: "en cobertura dental anual", amount: 1500, deductible: 100, important: false, health_contract: paligSalud1)
+Coverage.create(coverage_type: "en cobertura de ortodoncia anual", amount: 1500, deductible: 100, important: false, health_contract: paligSalud1)
+
 Coverage.create(coverage_type: "Seguro de vida", amount: 5000, deductible: 100, important: false, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Maternidad dentro Centro América", amount: 3000, deductible: 100, important: false, health_contract: paligSalud1)
+
+# Coverage.create(coverage_type: "Deducible global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
+# Coverage.create(coverage_type: "Reembolso global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
+Coverage.create(coverage_type: "Cuarto y Alimentación global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
+Coverage.create(coverage_type: "Ambulancia Terrestre global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
 Coverage.create(coverage_type: "Maternidad global", amount: 0, deductible: 100, important: false, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Atención de pediatría al Recién nacido", amount: 100, deductible: 100, important: false, health_contract: paligSalud1)
-Coverage.create(coverage_type: "Gastos de Repatriación", amount: 1500, deductible: 100, important: false, health_contract: paligSalud1)
 Plan.create(plan_type: "mensual", amount_cents: 2891, annual_installments: 12, annual_amount_cents: 34692, health_contract: paligSalud1)
 
-#Seguro de Salud: 18-19 Hombre sin dental
-paligSalud2 = HealthContract.create(min_age: 18, max_age: 19, company: "PALIG", gender: "Hombre")
-Coverage.create(coverage_type: "Reembolso en Centro America", amount: 80, deductible: 100, important: true, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Deducible en Centro America", amount: 100, deductible: 100, important: true, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Cobertura Dental anual", amount: 0, deductible: 100, important: true, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Ambulancia Terrestre", amount: 1500, deductible: 100, important: true, health_contract: paligSalud2)
-# Coverage.create(coverage_type: "Cobertura de Ortodoncia anual", amount: 0, deductible: 100, important: false, health_contract: paligSalud2)
-# Coverage.create(coverage_type: "Reembolso global", amount: 0, deductible: 100, important: false, health_contract: paligSalud2)
-# Coverage.create(coverage_type: "Deducible global", amount: 0, deductible: 100, important: false, health_contract: paligSalud2)
-# Coverage.create(coverage_type: "Ambulancia Terrestre global", amount: 0, deductible: 100, important: false, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Ambulancia Aérea", amount: 10000, deductible: 100, important: false, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Maximo Vitalicio", amount: 200000, deductible: 100, important: false, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Cuarto y Alimentación en Centro America", amount: 75, deductible: 100, important: false, health_contract: paligSalud2)
-# Coverage.create(coverage_type: "Cuarto y Alimentación global", amount: 0, deductible: 100, important: false, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Seguro de vida", amount: 5000, deductible: 100, important: false, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Maternidad dentro Centro América", amount: 3000, deductible: 100, important: false, health_contract: paligSalud2)
-# Coverage.create(coverage_type: "Maternidad global", amount: 0, deductible: 100, important: false, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Atención de pediatría al Recién nacido", amount: 100, deductible: 100, important: false, health_contract: paligSalud2)
-Coverage.create(coverage_type: "Gastos de Repatriación", amount: 1500, deductible: 100, important: false, health_contract: paligSalud2)
-Plan.create(plan_type: "mensual", amount_cents: 2311, annual_installments: 12, annual_amount_cents: 27732, health_contract: paligSalud2)
+
 
 #Seguro de Salud: 20-29 Hombre con dental
 paligSalud3 = HealthContract.create(min_age: 20, max_age: 29, company: "PALIG", gender: "Hombre")

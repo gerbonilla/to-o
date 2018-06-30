@@ -3,6 +3,8 @@
 <%= f.hidden_field :age, value: health_request.age %>
 <%= f.hidden_field :global, value: true %>
 <%= hidden_field_tag 'health_contract_id', health_contracts[0].id %>
+<% hc = health_contracts.first %>
+<% coverages = hc.coverages %>
 
 <!-- Header with price -->
 
@@ -14,51 +16,15 @@
   <div class="basic-coverages">
     <h4>Coberturas en Centro America:</h4>
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$80 en Reembolsos</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$100 en Deducibles</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$1,500 en Ambulancia Terrestre</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$10,000 en Ambulancia Aérea</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$75 de Cuarto y Alimentación</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$1,500 en Repatriación</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$200,000 de Maximo Vitalicio</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$3,000 en Maternidad</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        <div class="coverage-white-box">
-          <p>$100 en Pediatría</p>
-        </div>
-      </div>
+      <% hc.coverages.each do |c| %>
+        <% if c.important %>
+          <div class="col-xs-12 col-sm-6">
+            <div class="coverage-white-box">
+              <p>$<%= c.amount %> <%= c.coverage_type %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 
@@ -77,12 +43,14 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="coverage-primary-box">
-          <p>$80 en cobertura dental</p>
+         <% dental = coverages.where(coverage_type: "en cobertura dental anual") %>
+          <p>$<%= dental[0].amount %> en cobertura dental</p>
         </div>
       </div>
       <div class="col-xs-12">
         <div class="coverage-primary-box">
-          <p>$100 en cobertura de ortodoncia</p>
+        <% ortodoncia = coverages.where(coverage_type: "en cobertura de ortodoncia anual") %>
+          <p>$<%= ortodoncia[0].amount %> en cobertura de ortodoncia</p>
         </div>
       </div>
     </div>
@@ -97,7 +65,8 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="coverage-primary-box">
-          <p>$200,000 en coberturas</p>
+        <% vida = coverages.where(coverage_type: "Seguro de vida") %>
+          <p>$<%= vida[0].amount %> en coberturas</p>
         </div>
       </div>
     </div>
